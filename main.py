@@ -1,5 +1,16 @@
 import time
 
+# This is not accurate to how the I/O would be handled irl,
+# and is just for demonstration
+class Plane:
+    current_roll = 0.0
+
+    def roll(self, amount: float):
+        self.current_roll += amount
+
+    def get_roll(self):
+        return self.current_roll
+
 def main() -> None:
     plane = Plane()
 
@@ -33,14 +44,3 @@ def main() -> None:
         plane.roll(output)
 
         time.sleep(0.02)
-
-# This is not accurate to how the I/O would be handled irl,
-# and is just for demonstration
-class Plane:
-    current_roll = 0.0
-
-    def roll(self, amount: float):
-        self.current_roll += amount
-
-    def get_roll(self):
-        return self.current_roll
